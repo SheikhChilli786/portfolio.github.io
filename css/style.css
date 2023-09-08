@@ -416,8 +416,8 @@ h3.my-profession
     max-width: 40%;
     text-align: center;
     position: relative;
-    overflow: hidden; /* Add overflow property to handle image dimensions */
-    transition: all 0.3s ease; /* Add a hover transition */
+    overflow: hidden;
+    transition: all 0.3s ease;
 }
 
 .home .home-img::after {
@@ -441,23 +441,22 @@ h3.my-profession
     border-left: 10px solid var(--skin-color);
     left: 20px;
     top: -40px;
-    transition: all 0.3s ease; /* Add a hover transition */
+    transition: all 0.3s ease; 
 }
 
 .home .home-img img {
-    max-width: 100%; /* Ensure the image width fits within the container */
-    height: auto; /* Allow the image to maintain its aspect ratio */
+    max-width: 100%; 
+    height: auto;
     border-radius: 5px;
 }
 
-/* Add a hover effect to the .home-img element and its pseudo-elements */
 .home .home-img:hover {
-    transform: scale(1.05); /* Increase size on hover */
+    transform: scale(1.05);
 }
 
 .home .home-img:hover::before,
 .home .home-img:hover::after {
-    transform: scale(1.2); /* Increase size on hover */
+    transform: scale(1.2); 
 }
 
  /* .home .home-img
