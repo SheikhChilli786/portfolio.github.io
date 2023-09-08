@@ -181,7 +181,51 @@ ul
     font-size: 30px;
     text-transform: capitalize;
 }
-.aside .logo a
+.aside .logo a {
+    color: var(--text-black-900);
+    font-weight: 700;
+    padding: 15px 20px;
+    font-size: 24px; /* Adjust the font size to fit better */
+    letter-spacing: 2px; /* Adjust letter-spacing for better spacing */
+    text-transform: uppercase; /* Convert text to uppercase */
+    position: relative;
+}
+
+.aside .logo a span {
+    font-family: 'Clicker Script', cursive;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--skin-color);
+}
+
+.aside .logo a::before,
+.aside .logo a::after {
+    content: '';
+    position: absolute;
+    width: 12px; /* Adjust the width of the lines */
+    height: 2px; /* Adjust the height of the lines */
+    background-color: var(--skin-color);
+    transition: all 0.3s ease;
+}
+
+.aside .logo a::before {
+    bottom: 4px; /* Adjust the vertical position of the lines */
+    left: 0;
+}
+
+.aside .logo a::after {
+    top: 4px; /* Adjust the vertical position of the lines */
+    right: 0;
+}
+
+/* Add a hover effect to the lines */
+.aside .logo a:hover::before,
+.aside .logo a:hover::after {
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+/* .aside .logo a
 {
     color: var(--text-black-900);
     font-weight: 700;
@@ -216,7 +260,7 @@ ul
     border-right: 5px solid var(--skin-color);
     top: 0;
     right: 0;
-}
+} */
 .aside .nav-toggler
 {
     height: 40px;
@@ -301,6 +345,33 @@ ul
 .aside .nav li a i{
     margin-right: 15px;
 }
+/* Add a transition for smooth color change */
+.aside .nav li a {
+    font-size: 16px;
+    font-weight: 600;
+    display: block;
+    border-bottom: 1px solid var(--bg-black-50);
+    color: var(--text-black-900);
+    padding: 5px 15px;
+    transition: color 0.3s ease; /* Add a color transition */
+}
+
+/* Change the text color on hover */
+.aside .nav li a:hover {
+    color: var(--skin-color);
+}
+
+/* Add a transition for the icon rotation */
+.aside .nav li a i {
+    margin-right: 15px;
+    transition: transform 0.3s ease; /* Add a transform transition */
+}
+
+/* Rotate the icon on hover */
+.aside .nav li a:hover i {
+    transform: rotate(90deg);
+}
+
  /* home */
 .home
 {
@@ -340,7 +411,56 @@ h3.my-profession
     font-size: 20px;
     color: var(--text-black-700);
 }
-.home .home-img
+.home .home-img {
+    flex: 0 0 40%;
+    max-width: 40%;
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Add overflow property to handle image dimensions */
+    transition: all 0.3s ease; /* Add a hover transition */
+}
+
+.home .home-img::after {
+    content: '';
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    border-bottom: 10px solid var(--skin-color);
+    border-right: 10px solid var(--skin-color);
+    right: 20px;
+    bottom: -40px;
+    transition: all 0.3s ease; /* Add a hover transition */
+}
+
+.home .home-img::before {
+    content: '';
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    border-top: 10px solid var(--skin-color);
+    border-left: 10px solid var(--skin-color);
+    left: 20px;
+    top: -40px;
+    transition: all 0.3s ease; /* Add a hover transition */
+}
+
+.home .home-img img {
+    max-width: 100%; /* Ensure the image width fits within the container */
+    height: auto; /* Allow the image to maintain its aspect ratio */
+    border-radius: 5px;
+}
+
+/* Add a hover effect to the .home-img element and its pseudo-elements */
+.home .home-img:hover {
+    transform: scale(1.05); /* Increase size on hover */
+}
+
+.home .home-img:hover::before,
+.home .home-img:hover::after {
+    transform: scale(1.2); /* Increase size on hover */
+}
+
+ /* .home .home-img
 {
     flex: 0 0 40%;
     max-width: 40%;
@@ -374,7 +494,7 @@ h3.my-profession
     margin: auto;
     border-radius: 5px;
     height: 400px;
-}
+}  */
 /* About */
 .about .about-content
 {
@@ -683,12 +803,17 @@ h3.my-profession
     font-size: 15px;
     margin-bottom: 60px;
 }
-.contact .contact-info-item
+.contact .contact-info-item {
+    flex: 0 0 33.33%; /* Each item takes up 33.33% of the width */
+    max-width: 33.33%;
+}
+
+/* .contact .contact-info-item
 {
     flex: 0 0 25%;
     max-width: 25%;
     text-align: center;
-}
+} */
 .contact .contact-info-item .icon
 {
     display: inline-block;
@@ -698,7 +823,15 @@ h3.my-profession
     font-size: 25px;
     color: var(--skin-color);
 }
-.contact .contact-info-item h4
+.contact .contact-info-item h4,
+.contact .contact-info-item p {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-black-900);
+    text-transform: capitalize;
+    margin: 15px 0 5px;
+}
+/* .contact .contact-info-item h4
 {
     font-size: 18px;
     font-weight: 700;
@@ -713,7 +846,8 @@ h3.my-profession
     color: var(--text-black-700);
     font-weight: 400;
     padding-bottom: 50px;
-}
+} */
+
 .contact .contact-form
 {
     flex: 0 0 100%;
@@ -828,4 +962,7 @@ h3.my-profession
         flex: 0 0 100%;
         max-width: 100%;
     }
+}
+body.dark .skill-paragraph {
+    color: white;
 }
